@@ -53,13 +53,12 @@ public class Book {
 		if (o == null || getClass() != o.getClass())
 			return false;
 		Book book = (Book) o;
-		return numberOfPages == book.numberOfPages &&
-				Objects.equals(title, book.title) &&
-				Objects.equals(authors, book.authors);
+		return Objects.equals(title, book.title) &&
+				Objects.equals(numberOfPages, book.numberOfPages);
 	}
 
-	@Override public int hashCode()
-	{
-		return Objects.hash(title, numberOfPages, authors);
+	@Override
+	public int hashCode() {
+		return Objects.hash(title, numberOfPages);
 	}
 }

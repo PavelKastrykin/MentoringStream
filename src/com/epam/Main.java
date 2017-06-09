@@ -2,7 +2,9 @@ package com.epam;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
@@ -96,9 +98,10 @@ public class Main {
 
 		System.out.println();
 		//#7
-//		System.out.println("Get distinctList of all authors:------------");
-//		List<Author> distinctListOfAllAuthors = Arrays.stream(books)
-//				.
+		System.out.println("Get distinct List of all authors:------------");
+		Set<Author> distinctListOfAllAuthors = Arrays.stream(books)
+				.flatMap(book -> book.getAuthors().stream())
+				.collect(Collectors.toSet());
 
 	}
 }

@@ -54,12 +54,11 @@ public class Author {
 			return false;
 		Author author = (Author) o;
 		return age == author.age &&
-				Objects.equals(name, author.name) &&
-				Objects.equals(books, author.books);
+				Objects.equals(name, author.name);
 	}
 
-	@Override public int hashCode()
-	{
-		return Objects.hash(name, age, books);
+	@Override
+	public int hashCode() {
+		return Objects.hash(name, age);
 	}
 }
